@@ -147,4 +147,6 @@ void init() {
   }
 }
 
+TUNE(PieceValue, init);
+
 } // namespace PSQT
