@@ -243,15 +243,15 @@ namespace {
   #undef V
 
   // KingAttackWeights[PieceType] contains king attack weights by piece type
-  const int KingAttackWeights[PIECE_TYPE_NB] = { 0, 0, 78, 56, 45, 10, 10, 11 };
+  const int KingAttackWeights[PIECE_TYPE_NB] = { 0, 0, 81, 55, 44, 10, 10, 12 };
 
   // Penalties for enemy's safe checks
-  const int QueenCheck    = 780;
-  const int ElephantCheck = 780;
-  const int HawkCheck     = 780;
-  const int RookCheck     = 880;
-  const int BishopCheck   = 435;
-  const int KnightCheck   = 790;
+  const int QueenCheck    = 682;
+  const int ElephantCheck = 867;
+  const int HawkCheck     = 793;
+  const int RookCheck     = 883;
+  const int BishopCheck   = 442;
+  const int KnightCheck   = 804;
 
   // Threshold for lazy and space evaluation
   const Value LazyThreshold  = Value(1500);
