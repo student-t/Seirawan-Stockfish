@@ -39,9 +39,9 @@ namespace {
     {  32,   255,    -3                                    }, // Knight
     {   0,   104,     4,     0                             }, // Bishop      OUR PIECES
     { -26,    -2,    47,   105,  -149                      }, // Rook
-    {   0,     0,     0,     0,     0,     0               }, // Hawk
-    {   0,     0,     0,     0,     0,     0,     0        }, // Elephant
-    {-185,    24,   122,   137,  -134,     0,     0,     0 }  // Queen
+    {  17,    14,    -1,   -11,    10,    -3               }, // Hawk
+    {  -7,   -13,    -7,   -15,    -4,     0,   -17        }, // Elephant
+    {-185,    24,   122,   137,  -134,    -7,   -21,     0 }  // Queen
   };
 
   const int QuadraticTheirs[][PIECE_TYPE_NB] = {
@@ -52,9 +52,9 @@ namespace {
     {   9,    63,     0                                    }, // Knight
     {  59,    65,    42,     0                             }, // Bishop      OUR PIECES
     {  46,    39,    24,   -24,     0                      }, // Rook
-    {   0,     0,     0,     0,     0,     0               }, // Hawk
-    {   0,     0,     0,     0,     0,     0,     0        }, // Elephant
-    { 101,   100,   -37,   141,   268,     0,     0,     0 }  // Queen
+    {  -2,     8,     4,     8,     2,     0               }, // Hawk
+    { -12,    -4,     8,     1,     1,   -11,     0        }, // Elephant
+    { 101,   100,   -37,   141,   268,    -8,    -1,     0 }  // Queen
   };
 
   // QueenMinorsImbalance[opp_minor_count] is applied when only one side has a queen.
