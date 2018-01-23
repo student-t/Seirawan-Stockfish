@@ -258,6 +258,7 @@ namespace {
   const Value SpaceThreshold = Value(12222);
 
   int GateWeight[9] = { 0, 100, 200, 300, 400, 500, 600, 700, 800 };
+  TUNE(GateWeight);
 
   // initialize() computes king and pawn attacks, and the king ring bitboard
   // for a given color. This is done at the beginning of the evaluation.
