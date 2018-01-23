@@ -257,6 +257,7 @@ namespace {
   const Value LazyThreshold  = Value(1500);
   const Value SpaceThreshold = Value(12222);
 
+  int GateWeight[9] = { 0, 100, 200, 300, 400, 500, 600, 700, 800 };
 
   // initialize() computes king and pawn attacks, and the king ring bitboard
   // for a given color. This is done at the beginning of the evaluation.
@@ -559,7 +560,7 @@ namespace {
                + ElephantValueMg * pos.in_hand(Us, ELEPHANT)
                +    QueenValueMg * pos.in_hand(Us, QUEEN))
 
-                     /  (1 + popcount(pos.gates(Us)));
+                     * 100 / (100 + GateWeight[popcount(pos.gates(Us))]);
 
     score -= make_score(v, v);
 
