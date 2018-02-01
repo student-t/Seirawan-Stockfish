@@ -1146,6 +1146,10 @@ bool Position::see_ge(Move m, Value threshold) const {
   // we can hope for.
   balance = PieceValue[MG][piece_on(to)] - threshold;
 
+  // Bonus for capturing a potential gate
+  if ((gates(stm) & pieces(stm) & to) && !empty_hand(stm))
+      balance += mg_value(hand_score(stm)) / popcount(gates(stm));
+
   if (balance < VALUE_ZERO)
       return false;
 
