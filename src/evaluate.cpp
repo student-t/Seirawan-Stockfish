@@ -457,6 +457,10 @@ namespace {
 
   // evaluate_king() assigns bonuses and penalties to a king of a given color
 
+  int d[] = { 102, 191, 143, 848, 9 };
+  int offset = 40;
+  TUNE(d, SetRange(-500, 500), offset);
+
   template<Tracing T>  template<Color Us>
   Score Evaluation<T>::evaluate_king() {
 
@@ -527,12 +531,12 @@ namespace {
         unsafeChecks &= mobilityArea[Them];
 
         kingDanger +=       kingAttackersCount[Them] * kingAttackersWeight[Them]
-                     + 102 * kingAdjacentZoneAttacksCount[Them]
-                     + 191 * popcount(kingRing[Us] & weak)
-                     + 143 * popcount(pos.pinned_pieces(Us) | unsafeChecks)
-                     - 848 * !pos.pieces(Them, QUEEN, ELEPHANT, HAWK)
-                     -   9 * mg_value(score) / 8
-                     +  40;
+                     + d[0] * kingAdjacentZoneAttacksCount[Them]
+                     + d[1] * popcount(kingRing[Us] & weak)
+                     + d[2] * popcount(pos.pinned_pieces(Us) | unsafeChecks)
+                     - d[3] * !pos.pieces(Them, QUEEN, ELEPHANT, HAWK)
+                     - d[4] * mg_value(score) / 8
+                     + offset;
 
         // Transform the kingDanger units into a Score, and subtract it from the evaluation
         if (kingDanger > 0)
